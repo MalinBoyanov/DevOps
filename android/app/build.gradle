@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 
@@ -120,6 +121,13 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+project.ext.envConfigFiles = [
+    debug: ".env",
+    development: ".env.development",
+    staging: ".env.staging",
+    release: ".env.production"
+]
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -155,6 +163,14 @@ android {
         debug {
             signingConfig signingConfigs.debug
         }
+        development {
+            initWith debug
+            matchingFallbacks = ['debug']
+        }
+        staging {
+            initWith debug
+            matchingFallbacks = ['debug']
+        }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
@@ -184,6 +200,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation project(':react-native-config')
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 

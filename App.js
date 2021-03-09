@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   SafeAreaView,
@@ -15,7 +7,6 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
 import {
   Header,
   LearnMoreLinks,
@@ -23,8 +14,10 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Config from 'react-native-config';
 
 const App: () => React$Node = () => {
+  console.log(Config.API_HOST);
   return (
     <>
       <StatusBar barStyle="dark-content" />
