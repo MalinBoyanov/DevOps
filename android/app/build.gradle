@@ -143,6 +143,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue "string", "build_config_package", "com.devops"
     }
     splits {
         abi {
@@ -162,19 +163,23 @@ android {
     }
     buildTypes {
         debug {
+            applicationIdSuffix ".debug"
             signingConfig signingConfigs.debug
         }
         development {
             initWith debug
+            applicationIdSuffix ".development"
             matchingFallbacks = ['debug']
         }
         staging {
             initWith debug
+            applicationIdSuffix ".staging"
             matchingFallbacks = ['debug']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
+            applicationIdSuffix ".release"
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
