@@ -23,14 +23,14 @@ steps:
   inputs:
     gradleWrapperFile: 'android/gradlew'
     workingDirectory: 'android'
-    tasks: 'assembleDebug'
+    tasks: 'assembleRelease'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/android/app/build/outputs/apk/debug'
+    SourceFolder: '$(Build.SourcesDirectory)/android/app/build/outputs/apk/release'
     Contents: '*.apk'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
