@@ -1,5 +1,4 @@
 apply plugin: "com.android.application"
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 
@@ -127,6 +126,8 @@ project.ext.envConfigFiles = [
     staging: ".env.staging",
     release: ".env.production"
 ]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
