@@ -17,7 +17,7 @@ import {
 import Config from 'react-native-config';
 
 const App: () => React$Node = () => {
-  console.log(Config.API_HOST);
+  // console.log(Config.API_HOST);
   return (
     <>
       <StatusBar barStyle="dark-content" />
