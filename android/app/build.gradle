@@ -122,9 +122,9 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 
 project.ext.envConfigFiles = [
     debug: ".env",
-    development: ".env.development",
-    staging: ".env.staging",
-    release: ".env.production"
+    dev: ".env.development",
+    stage: ".env.staging",
+    prod: ".env.production",
 ]
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
@@ -145,6 +145,20 @@ android {
         versionName "1.0"
         resValue "string", "build_config_package", "com.devops"
     }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            applicationId "com.microsoft.ServicesHubMobileDev"
+        }
+        stage {
+            applicationId "com.microsoft.ServicesHubMobileStaging"
+        }
+        prod {
+            applicationId "com.microsoft.serviceshubmobile"
+        }
+    }
+
     splits {
         abi {
             reset()
@@ -163,23 +177,9 @@ android {
     }
     buildTypes {
         debug {
-            applicationIdSuffix ".debug"
             signingConfig signingConfigs.debug
         }
-        development {
-            initWith debug
-            applicationIdSuffix ".development"
-            matchingFallbacks = ['debug']
-        }
-        staging {
-            initWith debug
-            applicationIdSuffix ".staging"
-            matchingFallbacks = ['debug']
-        }
         release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
-            applicationIdSuffix ".release"
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
