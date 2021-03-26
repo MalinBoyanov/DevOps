@@ -15,13 +15,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Config from 'react-native-config';
+import {DWebView} from './src/DWebView';
 
-const App: () => React$Node = () => {
+const App = () => {
   // console.log(Config.API_HOST);
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <SafeAreaView style={{flex: 1, padding: 3}}>
+        <Text>{Config.API_HOST}</Text>
+        {/* <DWebView /> */}
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>

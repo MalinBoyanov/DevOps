@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android --variant=LocalDebug",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-config": "^1.4.2"
+    "react-native-config": "^1.4.2",
+    "react-native-webview": "^11.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

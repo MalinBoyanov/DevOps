@@ -148,6 +148,7 @@ android {
 
     flavorDimensions "environment"
     productFlavors {
+        local {}
         dev {
             applicationId "com.microsoft.ServicesHubMobileDev"
         }
