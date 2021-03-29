@@ -32,7 +32,7 @@ steps:
     inputs:
       gradleWrapperFile: 'android/gradlew'
       workingDirectory: 'android'
-      tasks: 'assembleDevDebug'
+      tasks: 'assembleDevRelease'
       publishJUnitResults: false
       javaHomeOption: 'JDKVersion'
       sonarQubeRunAnalysis: false
