@@ -5,6 +5,7 @@ import {
   ScrollView,
   View,
   Text,
+  Button,
   StatusBar,
 } from 'react-native';
 import {
@@ -17,6 +18,7 @@ import {
 import Config from 'react-native-config';
 import {DWebView} from './src/DWebView';
 import * as appData from './app-insights-key.json';
+import {ClickTracking} from './src/appInsights/appInsightsHelper';
 
 const App = () => {
   // console.log(Config.API_HOST);
@@ -43,6 +45,10 @@ const App = () => {
               <Text style={styles.sectionTitle}>
                 Step Two |{appData['development']}|
               </Text>
+              <Button
+                onPress={() => ClickTracking('operation1', 'identifier1')}
+                title="Track me"
+              />
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.

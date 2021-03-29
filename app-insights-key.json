@@ -1,6 +1,6 @@
 {
-  "development": "test1",
-  "production": "test2",
-  "staging": "test3",
-  "local": "test4"
+  "development": "b8fc8041-7de6-4ca6-bdf7-9bf7f521a4a8",
+  "production": "b8fc8041-7de6-4ca6-bdf7-9bf7f521a4a8",
+  "staging": "b8fc8041-7de6-4ca6-bdf7-9bf7f521a4a8",
+  "local": "b8fc8041-7de6-4ca6-bdf7-9bf7f521a4a8"
 }
