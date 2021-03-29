@@ -19,14 +19,12 @@ import {DWebView} from './src/DWebView';
 import * as appData from './app-insights-key.json';
 
 const App = () => {
-  console.log(Config.API_HOST);
-  console.log(appData);
+  // console.log(Config.API_HOST);
+  // console.log(appData);
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{flex: 1, padding: 3}}>
-        <Text>{Config.API_HOST}</Text>
-        <Text>appinsights: {appData['development']}</Text>
         {/* <DWebView /> */}
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -41,6 +39,9 @@ const App = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>
                 Step One |{Config.API_HOST}|
+              </Text>
+              <Text style={styles.sectionTitle}>
+                Step Two |{appData['development']}|
               </Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
