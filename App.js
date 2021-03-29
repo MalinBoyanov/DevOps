@@ -16,14 +16,17 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Config from 'react-native-config';
 import {DWebView} from './src/DWebView';
+import * as appData from './app-insights-key.json';
 
 const App = () => {
-  // console.log(Config.API_HOST);
+  console.log(Config.API_HOST);
+  console.log(appData);
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{flex: 1, padding: 3}}>
         <Text>{Config.API_HOST}</Text>
+        <Text>appinsights: {appData['development']}</Text>
         {/* <DWebView /> */}
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
