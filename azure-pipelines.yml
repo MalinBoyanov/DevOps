@@ -39,7 +39,7 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      SourceFolder: '$(Build.SourcesDirectory)/android/app/build/outputs/apk/dev/debug'
+      SourceFolder: '$(Build.SourcesDirectory)/android/app/build/outputs/apk/dev/release'
       Contents: '*.apk'
       TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
