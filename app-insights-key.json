@@ -1,6 +1,6 @@
 {
-  "development": "",
-  "production": "",
-  "staging": "",
-  "local": ""
+  "development": "test1",
+  "production": "test2",
+  "staging": "test3",
+  "local": "test4"
 }
