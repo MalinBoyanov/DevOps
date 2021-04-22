@@ -20,7 +20,6 @@ steps:
   - script: |
       npm install
     displayName: 'npm install'
-
   - task: DownloadSecureFile@1
     displayName: 'Download app insights key'
     name: appinsightskey
