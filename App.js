@@ -46,7 +46,9 @@ const App = () => {
                 Step Two |{appData['development']}|
               </Text>
               <Button
-                onPress={() => ClickTracking('operation1', 'identifier1')}
+                onPress={() =>
+                  ClickTracking('operation', new Date().getTime().toString())
+                }
                 title="Track me"
               />
               <Text style={styles.sectionDescription}>

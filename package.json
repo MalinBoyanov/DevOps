@@ -16,7 +16,8 @@
     "react-native-webview": "^11.2.4",
     "react-native-device-info": "^5.2.1",
     "@microsoft/applicationinsights-react-native": "^2.2.9",
-    "@microsoft/applicationinsights-web": "^2.5.11"
+    "@microsoft/applicationinsights-web": "^2.5.11",
+    "@serviceshub/x-localization": "0.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
